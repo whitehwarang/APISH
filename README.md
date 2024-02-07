@@ -8,7 +8,7 @@
 
 ## TR 이용 예제코드
 ```
-    import APISH2 as api
+    import APISH as api
     
     # indi를 시작하기 위한 indi 객체 생성
     indi_instance = api.new_indi('strategy1')
@@ -38,7 +38,7 @@
 ```
     import time
     import datetime
-    import APISH2 as api
+    import APISH as api
     
     # indi를 시작하기 위한 indi 객체 생성
     main_indi_instance = api.new_indi('strategy1')
