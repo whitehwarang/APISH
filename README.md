@@ -31,6 +31,8 @@
     print(chart)
     print(tr_schart.multi_output)
     assert chart == tr_schart.multi_output
+
+    # indi 접속 해제
     indi_instance.CloseIndi()
 ```
 
