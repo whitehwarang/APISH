@@ -4,9 +4,15 @@ import pythoncom
 
 from . import APIErrors, Logger
 
-#import TelegramBot
-#bot = TelegramBot.get_instance()
-#channel_id = TelegramBot.get_channel_id()
+try:
+    import TelegramBot
+    bot = TelegramBot.get_instance()
+    channel_id = TelegramBot.get_channel_id()
+except ImportError:
+    class bot:
+        @staticmethod
+        def sendMessage(*args, **kwrags): pass
+    channel_id = ""
 
 
 class Base:
@@ -156,7 +162,7 @@ class BaseTR(Base):
                 self.is_waiting = False
                 errstr = f'A TimeOutError has occured. rqid : {rqid} str_name: {self._indi_instance._owner} tr_name: {self.NAME}'
                 Logger.write_log(errstr)
-                #bot.sendMessage(chat_id=channel_id, text=errstr)
+                bot.sendMessage(chat_id=channel_id, text=errstr)
                 raise APIErrors.TimeOutError("Time Out!!!")
 
 

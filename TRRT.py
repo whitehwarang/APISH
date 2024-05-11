@@ -6,7 +6,6 @@ from .ParameterBooks import OutputParameterBook as Obook
 from . import Logger
 from . import APIErrors
 
-
 class AccountList(BaseTR):
 	NAME, DESCRIPTION = "AccountList", "계좌목록조회"
 	INPUT_DTYPE = None

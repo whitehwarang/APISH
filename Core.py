@@ -98,7 +98,8 @@ def new_indi(owner='master', is_realtime: bool = False, implicitly_wait: int = 6
         is_realtime(bool:False) : 실시간(realtime) 요청 가능 여부
         implicit_wait(int:60)   : 최대 대기시간. 시간 넘기면 raise TimeOutError
     """
-    inst = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
+    #inst = QAxWidget("GIEXPERTCONTROL.GiExpertControlCtrl.1")
+    inst = QAxWidget("SHINHANINDI.shinhanINDICtrl.1")
     inst._owner: 'Strategy' = owner
     inst._is_realtime: bool = is_realtime
     inst._implicitly_wait = implicitly_wait
